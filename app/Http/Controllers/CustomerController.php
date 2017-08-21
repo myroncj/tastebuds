@@ -75,4 +75,24 @@ class CustomerController extends Controller
         return redirect('/Clogin');
     }
     
+    public function verify() {
+        
+        $match = customer::where('reg_no',request('regno'))->where('password',request('password'))->first();
+
+        if(count($match)==1) {
+
+            return redirect('/Chome');
+
+        }
+        
+        return redirect('/Clogin');
+    
+    }
+    
+    public function homepage() {
+        
+        return view('customer.homepage');
+        
+    }
+    
 }

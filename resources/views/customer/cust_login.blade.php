@@ -22,12 +22,15 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form method="POST" action="/Clogin/login" class="form-signin">
+          
+        {{ csrf_field() }}  
+          
         <h2 class="form-signin-heading">Sign In</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputRegisterNo" class="form-control" placeholder="Register Number" required autofocus><br/>
+        <input name="regno" type="text" id="inputRegisterNo" class="form-control" placeholder="Register Number" required autofocus><br/>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="Admin"> Admin

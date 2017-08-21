@@ -17,9 +17,15 @@ Route::get('/', function () {
 
 Route::get('/Clogin','CustomerController@login');
 
+Route::post('/Clogin/login','CustomerController@verify');
+
 Route::get('/Creg', 'CustomerController@register');
 
 Route::post('/Creg/reg', 'CustomerController@store');
+
+Route::get('/Chome','CustomerController@homepage');
+
+
 
 
 Route::get('/Vreg','VendorController@register');
