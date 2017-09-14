@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/Clogin','CustomerController@login');
@@ -25,12 +25,20 @@ Route::post('/Creg/reg', 'CustomerController@store');
 
 Route::get('/Chome','CustomerController@homepage');
 
+Route::get('/Cmenu','CustomerController@menu');
+
 
 
 
 Route::get('/Vreg','VendorController@register');
 
 Route::post('/Vreg/reg','VendorController@store');
+
+Route::get('/Vlogin','VendorController@login');
+
+Route::post('/Vlogin/login','VendorController@verify');
+
+Route::get('/Vdash/','VendorController@dashboard');
 
 
 
@@ -65,3 +73,6 @@ Route::get('/login/{cust}','CustomerController@index2');
     
 });
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

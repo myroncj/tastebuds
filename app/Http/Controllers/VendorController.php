@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Vendor;
 
+use App\order;
+
 class VendorController extends Controller
 {
     //
@@ -31,6 +33,36 @@ class VendorController extends Controller
         $vend->save();
         
         return redirect('/Vreg');
+        
+    }
+    
+    public function login() {
+        
+        return view('vendor.vend_login');
+        
+    }
+    
+    public function verify() {
+        
+        $match = vendor::where('username',request('username'))->where('password',request('password'))->first();
+
+        if(count($match)==1) {
+
+            return redirect('/Vdash');
+
+        }
+        
+        return redirect('/Vlogin');
+    
+    }
+    
+    public function dashboard() {
+        
+        $orders = order::all();
+        
+            return view('vendor.vend_dashboard',compact('orders'));
+        
+        //return view('vendor.vend_dashboard');
         
     }
     

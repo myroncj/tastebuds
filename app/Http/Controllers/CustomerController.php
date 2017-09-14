@@ -95,4 +95,10 @@ class CustomerController extends Controller
         
     }
     
+    public function menu() {
+        
+        return view('customer.menu');
+        
+    }
+    
 }
