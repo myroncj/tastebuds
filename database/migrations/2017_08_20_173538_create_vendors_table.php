@@ -22,6 +22,7 @@ class CreateVendorsTable extends Migration
             $table->string('phone');
             $table->string('username');
             $table->string('password');
+            $table->integer('v_wallet_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFoodItemTable extends Migration
+class CreateVendorTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateFoodItemTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_item', function (Blueprint $table) {
+        Schema::create('vendor_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('category');
             $table->string('type');
-            $table->integer('quantity');
-            $table->string('availability');
-            $table->integer('price');
-            $table->unsignedinteger('vendor_id');
-            //$table->foreign('vendor_id')->references('id')->on('vendors');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ class CreateFoodItemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_item');
+        Schema::dropIfExists('vendor_types');
     }
 }

@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedinteger('transaction_id');
             $table->string('payment_status');
             $table->integer('status_id');
+            $table->dateTime('ETA');
             //$table->foreign('')
             $table->timestamps();
         });
