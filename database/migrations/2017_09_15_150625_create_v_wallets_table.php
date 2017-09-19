@@ -15,6 +15,7 @@ class CreateVWalletsTable extends Migration
     {
         Schema::create('v_wallets', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('vendor_id')->unsigned();
             $table->float('balance');
             $table->timestamps();
         });

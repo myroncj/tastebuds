@@ -16,13 +16,13 @@ class CreateVendorsTable extends Migration
         Schema::create('vendors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type');
+            $table->integer('vendor_type_id')->unsigned();
             $table->integer('stall_no');
-            $table->string('block_no');
+            $table->integer('block_no_id')->unsigned();
             $table->string('phone');
             $table->string('username');
             $table->string('password');
-            $table->integer('v_wallet_id')->unsigned();
+            // $table->integer('v_wallet_id')->unsigned();
             $table->timestamps();
         });
     }

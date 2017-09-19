@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomerTables extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCustomerTables extends Migration
      */
     public function up()
     {
-        Schema::create('customer', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cust_name');
-            $table->string('cust_class');
-            $table->integer('reg_no');
-            $table->string('password');
+            $table->integer('customer_id')->unsigned();
+            $table->string('feedback');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCustomerTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer');
+        Schema::dropIfExists('feedback');
     }
 }

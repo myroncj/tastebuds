@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class block_no extends Model
+class transaction_status extends Model
 {
-    
+    //
 }
