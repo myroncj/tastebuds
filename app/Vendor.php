@@ -41,4 +41,15 @@ class Vendor extends Model
       return $this->hasMany('App\transaction');
 
     }
+
+    //Mass assignable attributes
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    //hidden attributes
+     protected $hidden = [
+         'password', 'remember_token',
+     ];
+
 }

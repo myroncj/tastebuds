@@ -11,9 +11,9 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<form method="POST" action="/Vreg/reg" class="form-horizontal">
-                        
+
                         {{ csrf_field() }}
-                        
+
 						<div class="col-md-12">
 							<div class="jumbotron">
 								<div class="row">
@@ -35,14 +35,29 @@
 									</div>
 								</div>
 								<br>
+								<br>
 								<div class="row">
 									<div class="col-md-3">
 										<label for="Type" class="">Type <span class="asteriskField">*</span></label>
 									</div>
 								<div class="col-md-9">
-									<input type="type" class="form-control" name="type" id="Type" placeholder="Type" />
+									<!-- <div class="dropdown">
+										<button name="type" class="btn muted dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+										<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											@foreach($vendor_type as $ven)
+											<li value="{{ $ven->id }}">{{ $ven->type }}</li>
+											@endforeach
+										</ul>
+										<label for="sel1">Select list (select one):</label> -->
+							      <select name="type" class="form-control" id="type1">
+											@foreach($vendor_type as $ven)
+							        <option value="{{ $ven->id }}">{{ $ven->type }}</option>
+											@endforeach
+							      </select>
 									</div>
 								</div>
+								<br>
 								<br>
 								<div class="row">
 									<div class="col-md-3">
@@ -52,7 +67,7 @@
 										<input type="Stall Number " class="form-control" name="stall_no" id="Stall Number" placeholder="Stall Number"/>
 									</div>
                     			</div>
-								<br>
+													<br>
                     			<br>
                     			<div class="row">
                  					<div class="col-md-3">
@@ -60,7 +75,11 @@
 										<label for="Block Number" class="">Block Number <span class="asteriskField">*</span></label>
 									</div>
 									<div class="col-md-9">
-                						<input type="Block Number" class="form-control" name="block_no" id="Type" placeholder="Block Number" />
+										<select name="block_no" class="form-control" id="type1">
+											@foreach($block as $bl)
+											<option value="{{ $bl->id }}">{{ $bl->name }}</option>
+											@endforeach
+										</select>
 									</div>
 								</div>
 								<!-- <br>
@@ -102,7 +121,7 @@
                         			<div class="col-md-9">
                 						<input type="text" class="form-control" name="username" id="Type" placeholder="Username " />
                                     </div>
-                                </div> 
+                                </div>
                                 <br>
                                 <br>
                                 <div class="row">

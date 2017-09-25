@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'web_vendor' => [
+            'driver' => 'session',
+            'provider' => 'vendors',
+        ],
     ],
 
     /*
@@ -69,6 +74,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+
+               //Vendor user provider
+    'vendors' => [
+        'driver' => 'eloquent',  //We are using eloquent model
+            'model' => App\Vendor::class,
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',

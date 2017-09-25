@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-      
+
     <title>Vendor Login</title>
 
     <!-- Bootstrap core CSS -->
@@ -20,22 +20,20 @@
 
   <body>
 
+  <center><h2>Vendor Login</h2></center>
+
     <div class="container">
 
       <form method="POST" action="/Vlogin/login" class="form-signin">
-          
-        {{ csrf_field() }}  
-          
-        <h2 class="form-signin-heading">Vendor Sign In</h2>
+
+        {{ csrf_field() }}
+
+        <h2 class="form-signin-heading"></h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus><br/>
+        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" autofocus><br/>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Admin"> Admin
-          </label>
-        </div>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+        @include('layouts.errors')
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 

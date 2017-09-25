@@ -26,13 +26,13 @@ class order extends Model
 
     public function transaction() {
 
-      return $this->hasOne('App\transaction');
+      return $this->belongsTo('App\transaction');
 
     }
 
     public function status() {
 
-      return $this->hasOne('App\status');
+      return $this->belongsTo('App\status');
 
     }
 
